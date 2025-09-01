@@ -163,7 +163,7 @@ function print_nav_menu() {
     }
 
     print '<li class="nav-item" style="cursor: pointer;">
-        <a class="nav-link" href="/blocks/teachercontrol/multistandings.php?tab=settings">
+        <a class="nav-link" href="/blocks/teacher_control/multistandings.php?tab=settings">
             <svg class="bi bi-flag-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" d="M3.5 1a.5.5 0 0 1 .5.5v13a.5.5 0 0 1-1 0v-13a.5.5 0 0 1 .5-.5z"/>
                 <path fill-rule="evenodd" d="M3.762 2.558C4.735 1.909 5.348 1.5 6.5 1.5c.653 0 1.139.325 1.495.562l.032.022c.391.26.646.416.973.416.168 0 .356-.042.587-.126a8.89 8.89 0 0 0 .593-.25c.058-.027.117-.053.18-.08.57-.255 1.278-.544 2.14-.544a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-.5.5c-.638 0-1.18.21-1.734.457l-.159.07c-.22.1-.453.205-.678.287A2.719 2.719 0 0 1 9 9.5c-.653 0-1.139-.325-1.495-.562l-.032-.022c-.391-.26-.646-.416-.973-.416-.833 0-1.218.246-2.223.916A.5.5 0 0 1 3.5 9V3a.5.5 0 0 1 .223-.416l.04-.026z"/>
@@ -187,7 +187,7 @@ function print_students_activity() {
     $string_from = date("Y-m-d", $timestamp_from);
     $string_to = date("Y-m-d", $timestamp_to);
 
-    print "<form action='/blocks/teachercontrol/teacher_monitor.php' method='get' style='text-align: center; margin-bottom: 15px;'>
+    print "<form action='/blocks/teacher_control/teacher_monitor.php' method='get' style='text-align: center; margin-bottom: 15px;'>
         <b>От</b>
         <input type='date' name='from' value='$string_from'>
         <b>До</b>
@@ -402,8 +402,8 @@ function print_plugin($plugin_name, $plugin_fn) {
         $plugin_fn();
     } else {
         print "<div style=\"padding-left:30px;padding-top: 30px;margin-bottom: 30px\">";
-        print "<h1>" . $plugin_name . " " . get_string("no_plugin_installed", "block_teachercontrol") . "</h1>";
-        print "<p>" . get_string("install_plugin_description", "block_teachercontrol") . "</p>";
+        print "<h1>" . $plugin_name . " " . get_string("no_plugin_installed", "block_teacher_control") . "</h1>";
+        print "<p>" . get_string("install_plugin_description", "block_teacher_control") . "</p>";
         print "</div>";
     }
 }
@@ -412,7 +412,7 @@ function print_plugin($plugin_name, $plugin_fn) {
 
 /// Print the page header
 $PAGE->set_context(context_system::instance());
-$PAGE->set_url('/blocks/teachercontrol/teacher_monitor.php', array());
+$PAGE->set_url('/blocks/teacher_control/teacher_monitor.php', array());
 
 require_login();
 $PAGE->set_title('Монитор учителя');

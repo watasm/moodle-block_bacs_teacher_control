@@ -1,8 +1,19 @@
 # Teacher Control #
 
-TODO Describe the plugin shortly here.
+Plugin that provide teacher asigned pages with possibility to extend needed functionality.
 
-TODO Provide more detailed description here.
+It contains such useful pages like:
+* multistandings
+* teach monitor
+
+### Teacher monitor
+
+Page could be extednded with such plugins (not installed out of the box):
+* mod_bacs
+* enrol_apply
+* block_bacs_attendance_list
+
+If plugin is not installed instead of content you will see proposal to install it if it needed. If plugin instaled you will see appropriate functionality
 
 ## Installing via uploaded ZIP file ##
 
@@ -16,7 +27,7 @@ TODO Provide more detailed description here.
 
 The plugin can be also installed by putting the contents of this directory to
 
-    {your/moodle/dirroot}/blocks/teachercontrol
+    {your/moodle/dirroot}/blocks/teacher_control
 
 Afterwards, log in to your Moodle site as an admin and go to _Site administration >
 Notifications_ to complete the installation.

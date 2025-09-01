@@ -236,7 +236,7 @@ function print_view() {
     
     print "<script type='text/javascript'>
                 function toggle_compression() {
-                    window.location.href = '/blocks/teachercontrol/multistandings.php?courseids=$courseids_list&ids=$ids_list&compress=$not_use_compression';
+                    window.location.href = '/blocks/teacher_control/multistandings.php?courseids=$courseids_list&ids=$ids_list&compress=$not_use_compression';
                 }
             </script>";
     
@@ -292,7 +292,7 @@ function print_settings() {
     print "<p><b>Контестов в мониторе: $count_ids </b></p>";
 
     if ($count_ids > 0) {
-        print "<a href='/blocks/teachercontrol/multistandings.php.php"
+        print "<a href='/blocks/teacher_control/multistandings.php.php"
             . "?ids="
             . "&courseids="
             . "&tab=settings"
@@ -343,7 +343,7 @@ function print_settings() {
     if ($ids_list       == '') $ids_list_append       = ''; else $ids_list_append       = $ids_list . '_';
     if ($courseids_list == '') $courseids_list_append = ''; else $courseids_list_append = $courseids_list . '_';
 
-    print "<form action='/blocks/teachercontrol/multistandings.php' method='get' style='text-align: center; margin-bottom: 15px;'>
+    print "<form action='/blocks/teacher_control/multistandings.php' method='get' style='text-align: center; margin-bottom: 15px;'>
         <b>Поиск курса: </b>
         <input type='text' size=30 name='pattern' value='$pattern'>
         <input type='hidden' name='ids' value='$ids_list'>
@@ -385,7 +385,7 @@ function print_settings() {
             if (isset($courseids_set[$cur_course->id])) {
                 $course_action_html = "<i style='color: gray;'>Уже добавлен</i>";
             } else {
-                $course_action_html = "<a href='/blocks/teachercontrol/multistandings.php"
+                $course_action_html = "<a href='/blocks/teacher_control/multistandings.php"
                     . "?ids=$ids_list"
                     . "&courseids=$courseids_list_append$cur_course->id"
                     . "&tab=settings"
@@ -397,7 +397,7 @@ function print_settings() {
             if (isset($ids_set[$cur_cm->id])) {
                 $contest_action_html = "<i style='color: gray;'>Уже добавлен</i>";
             } else {
-                $contest_action_html = "<a href='/blocks/teachercontrol/multistandings.php"
+                $contest_action_html = "<a href='/blocks/teacher_control/multistandings.php"
                     . "?ids=$ids_list_append$cur_cm->id"
                     . "&courseids=$courseids_list"
                     . "&tab=settings"
@@ -435,7 +435,7 @@ $PAGE->set_context($CONTEXT);
 
 /// Print the page header
 
-$PAGE->set_url('/blocks/teachercontrol/multistandings.php', array());
+$PAGE->set_url('/blocks/teacher_control/multistandings.php', array());
 $PAGE->set_title('Составной монитор');
 $PAGE->set_heading('Составной монитор');
 //$PAGE->set_context($CONTEXT);

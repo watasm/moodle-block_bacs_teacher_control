@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
- * Plugin version and other meta-data are defined here.
+ * Capability definitions for the teacher_control block.
  *
  * @package     block_teacher_control
  * @copyright   2025 Your Name <you@example.com>
@@ -24,13 +24,29 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->component = 'block_teacher_control';
-$plugin->release = '0.1.0';
-$plugin->version = 2025090100;
-$plugin->requires = 2022112800;
-$plugin->maturity = MATURITY_STABLE;
-// $plugin->dependencies = [
-//     // 'mod_bacs' => 2025013000,
-//     // 'enrol_apply' => 2023101100,
-//     // 'block_bacs_attendance_list' => 2021101400,
-// ];
+$capabilities = array(
+
+    'block/teacher_control:myaddinstance' => array(
+        'captype' => 'write',
+        'contextlevel' => CONTEXT_SYSTEM,
+        'archetypes' => array(
+            'editingteacher' => CAP_ALLOW,
+            'manager' => CAP_ALLOW
+        ),
+
+        'clonepermissionsfrom' => 'moodle/my:manageblocks'
+    ),
+
+    'block/teacher_control:addinstance' => array(
+        'riskbitmask' => RISK_SPAM | RISK_XSS,
+
+        'captype' => 'write',
+        'contextlevel' => CONTEXT_BLOCK,
+        'archetypes' => array(
+            'editingteacher' => CAP_ALLOW,
+            'manager' => CAP_ALLOW
+        ),
+
+        'clonepermissionsfrom' => 'moodle/site:manageblocks'
+    ),
+);
