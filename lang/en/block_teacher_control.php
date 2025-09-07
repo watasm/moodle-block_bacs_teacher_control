@@ -57,3 +57,23 @@ $string['review'] = 'Review';
 
 // Page titles
 $string['teacher_monitor'] = 'Teacher Monitor';
+
+// Multistandings strings
+$string['monitor'] = 'Monitor';
+$string['content_settings'] = 'Content Settings';
+$string['multiple_courses'] = 'Multiple courses';
+$string['show_upsolving'] = 'Show upsolving';
+$string['hide_upsolving'] = 'Hide upsolving';
+$string['combine_same_tasks'] = 'Combine same tasks';
+$string['hide_inactive'] = 'Hide inactive';
+$string['nothing_to_show'] = 'Nothing to show, add courses or contests in the "Content Settings" tab.';
+$string['contests_in_monitor'] = 'Contests in monitor';
+$string['clear_monitor'] = 'Clear monitor';
+$string['show_selected'] = 'Show selected';
+$string['hide_selected'] = 'Hide selected';
+$string['course_search'] = 'Course search';
+$string['find'] = 'Find';
+$string['already_added'] = 'Already added';
+$string['add_whole_course'] = 'Add whole course';
+$string['add_contest'] = 'Add contest';
+$string['composite_monitor_title'] = 'Composite Monitor';

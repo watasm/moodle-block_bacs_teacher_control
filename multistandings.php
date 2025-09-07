@@ -82,12 +82,12 @@ function print_nav_menu() {
 
     print '<li id="ms_tab_view_header" style="cursor: pointer;" class="nav-item"
         onclick="multistandings_open_tab('.$view_string.')">
-        <a class="nav-link"><i class="icon-flag"></i> Монитор</a>
+        <a class="nav-link"><i class="icon-flag"></i> ' . get_string('monitor', 'block_teacher_control') . '</a>
     </li>';
 
     print '<li id="ms_tab_settings_header" style="cursor: pointer;" class="nav-item"
         onclick="multistandings_open_tab('.$settings_string.')">
-        <a class="nav-link"><i class="icon-cog"></i> Настройки содержимого</a>
+        <a class="nav-link"><i class="icon-cog"></i> ' . get_string('content_settings', 'block_teacher_control') . '</a>
     </li>';
 
     print '</ul>';
@@ -154,7 +154,7 @@ function print_view() {
         $cur_student = $DB->get_record('user', array('id' => $cur_student_id), 'id, firstname, lastname', MUST_EXIST);
 
         if ($cur_course_id == -1) {
-            $cur_student->course_fullname = "Несколько курсов";
+            $cur_student->course_fullname = get_string('multiple_courses', 'block_teacher_control');
             $cur_student->course_id = -1;
         } else {
             $cur_course = $DB->get_record('course', array('id' => $cur_course_id), 'fullname', MUST_EXIST);
@@ -208,19 +208,22 @@ function print_view() {
     // upsolving button
     /*
     if (($contest->endtime <= $now)) {
+        $show_upsolving_text = get_string('show_upsolving', 'block_teacher_control');
+        $hide_upsolving_text = get_string('hide_upsolving', 'block_teacher_control');
+        
         print "<script type='text/javascript'>
                 function toggle_upsolving() {
                     var upsolving_button = document.getElementById('upsolving_button');
                     if (standings.toggle_upsolving()) {
-                        upsolving_button.innerHTML = 'Показать дорешивание';
+                        upsolving_button.innerHTML = '$show_upsolving_text';
                     } else {
-                        upsolving_button.innerHTML = 'Скрыть дорешивание';
+                        upsolving_button.innerHTML = '$hide_upsolving_text';
                     }
                 }
             </script>";
     
         print "<div style='float: right;'>
-            <button id='upsolving_button' class='btn btn-info' onclick='toggle_upsolving();'>Скрыть дорешивание</button>
+            <button id='upsolving_button' class='btn btn-info' onclick='toggle_upsolving();'>' . get_string('hide_upsolving', 'block_teacher_control') . '</button>
         </div>";
     }
     //*/
@@ -251,11 +254,11 @@ function print_view() {
     print "<div>
             <p>
                 <input type='checkbox' id='use_compression_checkbox' onclick='toggle_compression();' $use_compression_checked>
-                <label for='use_compression_checkbox'>Объединить одинаковые задачи</label>
+                <label for='use_compression_checkbox'>" . get_string('combine_same_tasks', 'block_teacher_control') . "</label>
             </p>
             <p>
                 <input type='checkbox' id='hide_inactive_checkbox' onclick='toggle_inactive();'>
-                <label for='hide_inactive_checkbox'>Скрыть неактивных</label>
+                <label for='hide_inactive_checkbox'>" . get_string('hide_inactive', 'block_teacher_control') . "</label>
             </p>
         </div>";
     
@@ -268,7 +271,7 @@ function print_view() {
     }
     
     if (count($ids) == 0) {
-        print 'Нечего показывать, добавьте курсы или контесты во вкладке "Настройки содержимого".';
+        print get_string('nothing_to_show', 'block_teacher_control');
     } else {
         print "<table class='generaltable' id='standings_table'></table>";
     
@@ -289,7 +292,7 @@ function print_settings() {
 
     $count_ids = count($ids);
 
-    print "<p><b>Контестов в мониторе: $count_ids </b></p>";
+    print "<p><b>" . get_string('contests_in_monitor', 'block_teacher_control') . ": $count_ids </b></p>";
 
     if ($count_ids > 0) {
         print "<a href='/blocks/teacher_control/multistandings.php.php"
@@ -297,29 +300,32 @@ function print_settings() {
             . "&courseids="
             . "&tab=settings"
             . "&pattern=$pattern'><button class='btn btn-warning'>
-                Очистить монитор
+                ' . get_string('clear_monitor', 'block_teacher_control') . '
             </button></a>";
 
+        $hide_selected_text = get_string('hide_selected', 'block_teacher_control');
+        $show_selected_text = get_string('show_selected', 'block_teacher_control');
+        
         print "<script type='text/javascript'>
                 function toggle_taken() {
                     var taken_button = document.getElementById('taken_button');
                     var taken_table = document.getElementById('taken_table');
-                    if (taken_button.innerHTML == 'Скрыть выбранные') {
-                        taken_button.innerHTML = 'Показать выбранные';
+                    if (taken_button.innerHTML == '$hide_selected_text') {
+                        taken_button.innerHTML = '$show_selected_text';
                         taken_table.style.display = 'none';
                     } else {
-                        taken_button.innerHTML = 'Скрыть выбранные';
+                        taken_button.innerHTML = '$hide_selected_text';
                         taken_table.style.display = 'block';
                     }
                 }
             </script>";
 
-        print " <button id='taken_button' class='btn btn-info' onclick='toggle_taken();'>Показать выбранные</button>";
+        print " <button id='taken_button' class='btn btn-info' onclick='toggle_taken();'>" . get_string('show_selected', 'block_teacher_control') . "</button>";
 
         print "<table id='taken_table' style='display: none;' class='generaltable'><thead>
                 <th>N</th>
-                <th>Курс</th>
-                <th>Контест</th>
+                <th>" . get_string('course', 'block_teacher_control') . "</th>
+                <th>" . get_string('contest', 'block_teacher_control') . "</th>
             </thead><tbody>";
 
         $row_number = 0;
@@ -344,12 +350,12 @@ function print_settings() {
     if ($courseids_list == '') $courseids_list_append = ''; else $courseids_list_append = $courseids_list . '_';
 
     print "<form action='/blocks/teacher_control/multistandings.php' method='get' style='text-align: center; margin-bottom: 15px;'>
-        <b>Поиск курса: </b>
+        <b>" . get_string('course_search', 'block_teacher_control') . ": </b>
         <input type='text' size=30 name='pattern' value='$pattern'>
         <input type='hidden' name='ids' value='$ids_list'>
         <input type='hidden' name='courseids' value='$courseids_list'>
         <input type='hidden' name='tab' value='settings'>
-        <input type='submit' value='Найти'>
+        <input type='submit' value='" . get_string('find', 'block_teacher_control') . "'>
     </form>";
 
     $search_limit = 10;
@@ -367,10 +373,10 @@ function print_settings() {
 
     print "<table class='generaltable'><thead>
             <th class='header' style='' scope='col'>N</th>
-            <th class='header' style='' scope='col'>Курс</th>
-            <th class='header' style='' scope='col'>Действия</th>
-            <th class='header' style='' scope='col'>Контест</th>
-            <th class='header' style='' scope='col'>Действия</th>
+            <th class='header' style='' scope='col'>" . get_string('course', 'block_teacher_control') . "</th>
+            <th class='header' style='' scope='col'>" . get_string('actions', 'block_teacher_control') . "</th>
+            <th class='header' style='' scope='col'>" . get_string('contest', 'block_teacher_control') . "</th>
+            <th class='header' style='' scope='col'>" . get_string('actions', 'block_teacher_control') . "</th>
         </thead><tbody>";
 
     $row_number = 0;
@@ -383,26 +389,26 @@ function print_settings() {
             $cur_cm = get_coursemodule_from_instance('bacs', $cur_contest->id, $cur_course->id, false, MUST_EXIST);
 
             if (isset($courseids_set[$cur_course->id])) {
-                $course_action_html = "<i style='color: gray;'>Уже добавлен</i>";
+                $course_action_html = "<i style='color: gray;'>" . get_string('already_added', 'block_teacher_control') . "</i>";
             } else {
                 $course_action_html = "<a href='/blocks/teacher_control/multistandings.php"
                     . "?ids=$ids_list"
                     . "&courseids=$courseids_list_append$cur_course->id"
                     . "&tab=settings"
                     . "&pattern=$pattern'><button class='btn btn-info'>
-                        Добавить весь курс
+                        " . get_string('add_whole_course', 'block_teacher_control') . "
                     </button></a>";
             }
 
             if (isset($ids_set[$cur_cm->id])) {
-                $contest_action_html = "<i style='color: gray;'>Уже добавлен</i>";
+                $contest_action_html = "<i style='color: gray;'>" . get_string('already_added', 'block_teacher_control') . "</i>";
             } else {
                 $contest_action_html = "<a href='/blocks/teacher_control/multistandings.php"
                     . "?ids=$ids_list_append$cur_cm->id"
                     . "&courseids=$courseids_list"
                     . "&tab=settings"
                     . "&pattern=$pattern'><button class='btn btn-info'>
-                        Добавить контест
+                        " . get_string('add_contest', 'block_teacher_control') . "
                     </button></a>";
             }
 
@@ -436,8 +442,8 @@ $PAGE->set_context($CONTEXT);
 /// Print the page header
 
 $PAGE->set_url('/blocks/teacher_control/multistandings.php', array());
-$PAGE->set_title('Составной монитор');
-$PAGE->set_heading('Составной монитор');
+$PAGE->set_title(get_string('composite_monitor_title', 'block_teacher_control'));
+$PAGE->set_heading(get_string('composite_monitor_title', 'block_teacher_control'));
 //$PAGE->set_context($CONTEXT);
 
 //$PAGE->requires->css('/mod/bacs/bootstrap/css/docs.min.css');

@@ -57,3 +57,23 @@ $string['review'] = 'Рассмотреть';
 
 // Page titles
 $string['teacher_monitor'] = 'Монитор учителя';
+
+// Multistandings strings
+$string['monitor'] = 'Монитор';
+$string['content_settings'] = 'Настройки содержимого';
+$string['multiple_courses'] = 'Несколько курсов';
+$string['show_upsolving'] = 'Показать дорешивание';
+$string['hide_upsolving'] = 'Скрыть дорешивание';
+$string['combine_same_tasks'] = 'Объединить одинаковые задачи';
+$string['hide_inactive'] = 'Скрыть неактивных';
+$string['nothing_to_show'] = 'Нечего показывать, добавьте курсы или контесты во вкладке "Настройки содержимого".';
+$string['contests_in_monitor'] = 'Контестов в мониторе';
+$string['clear_monitor'] = 'Очистить монитор';
+$string['show_selected'] = 'Показать выбранные';
+$string['hide_selected'] = 'Скрыть выбранные';
+$string['course_search'] = 'Поиск курса';
+$string['find'] = 'Найти';
+$string['already_added'] = 'Уже добавлен';
+$string['add_whole_course'] = 'Добавить весь курс';
+$string['add_contest'] = 'Добавить контест';
+$string['composite_monitor_title'] = 'Составной монитор';

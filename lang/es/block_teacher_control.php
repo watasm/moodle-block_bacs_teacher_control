@@ -57,3 +57,23 @@ $string['review'] = 'Revisar';
 
 // Page titles
 $string['teacher_monitor'] = 'Monitor del Profesor';
+
+// Multistandings strings
+$string['monitor'] = 'Monitor';
+$string['content_settings'] = 'Configuración de Contenido';
+$string['multiple_courses'] = 'Múltiples cursos';
+$string['show_upsolving'] = 'Mostrar resolución';
+$string['hide_upsolving'] = 'Ocultar resolución';
+$string['combine_same_tasks'] = 'Combinar tareas iguales';
+$string['hide_inactive'] = 'Ocultar inactivos';
+$string['nothing_to_show'] = 'Nada que mostrar, agregue cursos o concursos en la pestaña "Configuración de Contenido".';
+$string['contests_in_monitor'] = 'Concursos en monitor';
+$string['clear_monitor'] = 'Limpiar monitor';
+$string['show_selected'] = 'Mostrar seleccionados';
+$string['hide_selected'] = 'Ocultar seleccionados';
+$string['course_search'] = 'Búsqueda de curso';
+$string['find'] = 'Buscar';
+$string['already_added'] = 'Ya agregado';
+$string['add_whole_course'] = 'Agregar curso completo';
+$string['add_contest'] = 'Agregar concurso';
+$string['composite_monitor_title'] = 'Monitor Compuesto';
