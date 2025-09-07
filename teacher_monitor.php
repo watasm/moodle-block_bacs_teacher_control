@@ -2,6 +2,7 @@
 
 require_once(dirname(__FILE__).'/../../config.php');
 require_once(dirname(__FILE__).'/../../mod/bacs/utils.php');
+require_once(dirname(__FILE__).'/../../mod/bacs/locale_utils.php');
 require_once(dirname(__FILE__).'/../../mod/bacs/submit_verdicts.php');
 
 function is_admin() {
@@ -118,7 +119,7 @@ function print_nav_menu() {
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list-ul" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
             </svg>
-            Активность студентов
+            ' . get_string('student_activity', 'block_teacher_control') . '
         </a>
     </li>';
 
@@ -129,9 +130,9 @@ function print_nav_menu() {
                 <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
                 <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
             </svg> 
-            Заявки на курсы'.
-            '<span id="tm_tab_enrols_header_ainfo" style="color: red;"></span>'.
-        '</a>
+            ' . get_string('course_applications', 'block_teacher_control') . '
+            <span id="tm_tab_enrols_header_ainfo" style="color: red;"></span>
+        </a>
     </li>';
 
     $pluginmanager = \core_plugin_manager::instance();
@@ -145,8 +146,8 @@ function print_nav_menu() {
                     <path d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
                     <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
                 </svg>
-                Журнал посещаемости' .
-            '</a>
+                ' . get_string('attendance_journal', 'block_teacher_control') . '
+            </a>
         </li>';
 
     } else {
@@ -157,7 +158,7 @@ function print_nav_menu() {
                 <path d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
                 <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
             </svg>
-            Журнал посещаемости
+            ' . get_string('attendance_journal', 'block_teacher_control') . '
         </a>
         </li>';
     }
@@ -168,8 +169,8 @@ function print_nav_menu() {
                 <path fill-rule="evenodd" d="M3.5 1a.5.5 0 0 1 .5.5v13a.5.5 0 0 1-1 0v-13a.5.5 0 0 1 .5-.5z"/>
                 <path fill-rule="evenodd" d="M3.762 2.558C4.735 1.909 5.348 1.5 6.5 1.5c.653 0 1.139.325 1.495.562l.032.022c.391.26.646.416.973.416.168 0 .356-.042.587-.126a8.89 8.89 0 0 0 .593-.25c.058-.027.117-.053.18-.08.57-.255 1.278-.544 2.14-.544a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-.5.5c-.638 0-1.18.21-1.734.457l-.159.07c-.22.1-.453.205-.678.287A2.719 2.719 0 0 1 9 9.5c-.653 0-1.139-.325-1.495-.562l-.032-.022c-.391-.26-.646-.416-.973-.416-.833 0-1.218.246-2.223.916A.5.5 0 0 1 3.5 9V3a.5.5 0 0 1 .223-.416l.04-.026z"/>
             </svg> 
-            Составной монитор' .
-        '</a>
+            ' . get_string('composite_monitor', 'block_teacher_control') . '
+        </a>
     </li>';
     print '</ul>';
 }
@@ -188,11 +189,11 @@ function print_students_activity() {
     $string_to = date("Y-m-d", $timestamp_to);
 
     print "<form action='/blocks/teacher_control/teacher_monitor.php' method='get' style='text-align: center; margin-bottom: 15px;'>
-        <b>От</b>
+        <b>" . get_string('from', 'block_teacher_control') . "</b>
         <input type='date' name='from' value='$string_from'>
-        <b>До</b>
+        <b>" . get_string('to', 'block_teacher_control') . "</b>
         <input type='date' name='to' value='$string_to'>
-        <input type='submit' value='Отфильтровать'>
+        <input type='submit' value='" . get_string('filter', 'block_teacher_control') . "'>
     </form>";
 
     if (is_admin()) {
@@ -257,26 +258,29 @@ function print_students_activity() {
         }
     </style>';
 
-    print '
-    <table class="cwidetable">
-        <thead><tr style="font-weight: bold">
+    print "
+    <table class=\"cwidetable\">
+        <thead><tr style=\"font-weight: bold\">
             <td>N</td>
-            <td>Курс</td>
-            <td>Контест</td>
-            <td>Задача</td>
-            <td>Автор</td>
-            <td>Язык</td>
-            <td>Вердикт</td>
-            <td>Баллы</td>
-            <td>Дата/время</td>
+            <td>" . get_string('course', 'block_teacher_control') . "</td>
+            <td>" . get_string('contest', 'block_teacher_control') . "</td>
+            <td>" . get_string('task', 'block_teacher_control') . "</td>
+            <td>" . get_string('author', 'block_teacher_control') . "</td>
+            <td>" . get_string('language', 'block_teacher_control') . "</td>
+            <td>" . get_string('verdict', 'block_teacher_control') . "</td>
+            <td>" . get_string('points', 'block_teacher_control') . "</td>
+            <td>" . get_string('date_time', 'block_teacher_control') . "</td>
         </tr></thead>
-        <tbody>';
+        <tbody>";
 
     $row_number = 0;
     foreach ($my_submits as $submit) {
         $cur_contest = $DB->get_record('bacs', array('id' => $submit->contest_id));
         $cur_course = $DB->get_record('course', array('id' => $cur_contest->course));
         $cur_task = $DB->get_record('bacs_tasks', array('task_id' => $submit->task_id));
+        if(isset($cur_task->names)) {
+            $cur_task->name = bacs_get_localized_name($cur_task);
+        }
         $cur_lang = $DB->get_record('bacs_langs', array('lang_id' => $submit->lang_id));
         $cur_author = $DB->get_record('user', array('id' => $submit->user_id));
 
@@ -367,9 +371,9 @@ function print_pending_enrols() {
     print '
     <table class="cwidetable">
         <thead><tr style="font-weight: bold">
-            <td>Курс</td>
-            <td>Заявки</td>
-            <td>Действия</td>
+            <td>' . get_string('course', 'block_teacher_control') . '</td>
+            <td>' . get_string('applications', 'block_teacher_control') . '</td>
+            <td>' . get_string('actions', 'block_teacher_control') . '</td>
         </tr></thead>
         <tbody>';
     foreach (array_merge($enrols_with_applications, $enrols_without_applications) as $cur_enrol_id) {
@@ -383,7 +387,7 @@ function print_pending_enrols() {
             <td><a href='/course/view.php?id=$cur_course->id'>$cur_course->shortname</a></td>
             <td>".$applications_per_enrol[$cur_enrol->id]."</td>
             <td><a href='/enrol/apply/manage.php?id=$cur_enrol->id'>
-                <button class='btn btn-info'>Рассмотреть</button>
+                <button class='btn btn-info'>' . get_string('review', 'block_teacher_control') . '</button>
             </a></td>
         </tr>";
     }
@@ -415,17 +419,15 @@ $PAGE->set_context(context_system::instance());
 $PAGE->set_url('/blocks/teacher_control/teacher_monitor.php', array());
 
 require_login();
-$PAGE->set_title('Монитор учителя');
-$PAGE->set_heading('Монитор учителя');
+$PAGE->set_title(get_string('teacher_monitor', 'block_teacher_control'));
+$PAGE->set_heading(get_string('teacher_monitor', 'block_teacher_control'));
 
-$PAGE->requires->css('/mod/bacs/main.css', true);
+$PAGE->requires->css('/mod/bacs/main.css');
 
 // Output starts here
 echo $OUTPUT->header();
 
 $PAGE->navbar->ignore_active();
-$PAGE->navbar->add('preview', new moodle_url('/a/link/if/you/want/one.php'));
-$PAGE->navbar->add('name of thing', new moodle_url('/a/link/if/you/want/one.php'));
 
 $now = time();
 

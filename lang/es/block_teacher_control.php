@@ -25,35 +25,35 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$string['pluginname'] = 'Teacher Control';
-$string['no_plugin_installed'] = 'plugin is not installed';
-$string['install_plugin_description'] = 'Install that plugin if you want to see its functionality';
+$string['pluginname'] = 'Control del Profesor';
+$string['no_plugin_installed'] = 'plugin no está instalado';
+$string['install_plugin_description'] = 'Instale ese plugin si desea ver su funcionalidad';
 
 // Navigation menu strings
-$string['student_activity'] = 'Student Activity';
-$string['course_applications'] = 'Course Applications';
-$string['attendance_journal'] = 'Attendance Journal';
-$string['composite_monitor'] = 'Composite Monitor';
+$string['student_activity'] = 'Actividad de Estudiantes';
+$string['course_applications'] = 'Solicitudes de Cursos';
+$string['attendance_journal'] = 'Registro de Asistencia';
+$string['composite_monitor'] = 'Monitor Compuesto';
 
 // Filter form strings
-$string['from'] = 'From';
-$string['to'] = 'To';
-$string['filter'] = 'Filter';
+$string['from'] = 'Desde';
+$string['to'] = 'Hasta';
+$string['filter'] = 'Filtrar';
 
 // Activity table headers
-$string['course'] = 'Course';
-$string['contest'] = 'Contest';
-$string['task'] = 'Task';
-$string['author'] = 'Author';
-$string['language'] = 'Language';
-$string['verdict'] = 'Verdict';
-$string['points'] = 'Points';
-$string['date_time'] = 'Date/Time';
+$string['course'] = 'Curso';
+$string['contest'] = 'Concurso';
+$string['task'] = 'Tarea';
+$string['author'] = 'Autor';
+$string['language'] = 'Idioma';
+$string['verdict'] = 'Veredicto';
+$string['points'] = 'Puntos';
+$string['date_time'] = 'Fecha/Hora';
 
 // Enrols table headers
-$string['applications'] = 'Applications';
-$string['actions'] = 'Actions';
-$string['review'] = 'Review';
+$string['applications'] = 'Solicitudes';
+$string['actions'] = 'Acciones';
+$string['review'] = 'Revisar';
 
 // Page titles
-$string['teacher_monitor'] = 'Teacher Monitor';
+$string['teacher_monitor'] = 'Monitor del Profesor';

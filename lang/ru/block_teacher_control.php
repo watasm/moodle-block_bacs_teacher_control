@@ -28,3 +28,32 @@ defined('MOODLE_INTERNAL') || die();
 $string['pluginname'] = 'Монитор Учителя';
 $string['no_plugin_installed'] = 'плагин не установлен';
 $string['install_plugin_description'] = 'Установите плагин если хотите увидеть его функционал';
+
+// Navigation menu strings
+$string['student_activity'] = 'Активность студентов';
+$string['course_applications'] = 'Заявки на курсы';
+$string['attendance_journal'] = 'Журнал посещаемости';
+$string['composite_monitor'] = 'Составной монитор';
+
+// Filter form strings
+$string['from'] = 'От';
+$string['to'] = 'До';
+$string['filter'] = 'Отфильтровать';
+
+// Activity table headers
+$string['course'] = 'Курс';
+$string['contest'] = 'Контест';
+$string['task'] = 'Задача';
+$string['author'] = 'Автор';
+$string['language'] = 'Язык';
+$string['verdict'] = 'Вердикт';
+$string['points'] = 'Баллы';
+$string['date_time'] = 'Дата/время';
+
+// Enrols table headers
+$string['applications'] = 'Заявки';
+$string['actions'] = 'Действия';
+$string['review'] = 'Рассмотреть';
+
+// Page titles
+$string['teacher_monitor'] = 'Монитор учителя';
