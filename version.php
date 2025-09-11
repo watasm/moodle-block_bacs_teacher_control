@@ -26,7 +26,7 @@ defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'block_teacher_control';
 $plugin->release = '0.1.0';
-$plugin->version = 2025090800;
+$plugin->version = 2025090801;
 $plugin->requires = 2022112800;
 $plugin->maturity = MATURITY_STABLE;
 // $plugin->dependencies = [

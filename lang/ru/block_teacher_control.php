@@ -25,7 +25,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$string['pluginname'] = 'Монитор Учителя';
+$string['pluginname'] = 'Кабинет учителя';
 $string['no_plugin_installed'] = 'плагин не установлен';
 $string['install_plugin_description'] = 'Установите плагин если хотите увидеть его функционал';
 
@@ -56,7 +56,7 @@ $string['actions'] = 'Действия';
 $string['review'] = 'Рассмотреть';
 
 // Page titles
-$string['teacher_monitor'] = 'Монитор учителя';
+$string['teacher_monitor'] = 'Кабинет учителя';
 
 // Multistandings strings
 $string['monitor'] = 'Монитор';
