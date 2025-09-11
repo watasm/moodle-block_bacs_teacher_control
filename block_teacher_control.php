@@ -84,7 +84,7 @@ class block_teacher_control extends block_base {
      */
     public function applicable_formats() {
         return array(
-            'my' => true
+            'site-index' => true
         );
     }
 }
